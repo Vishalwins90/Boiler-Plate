@@ -1,0 +1,62 @@
+<mat-card>
+  <mat-card-content>
+    <div class="header">
+      <h2>Signup</h2>
+    </div>
+    <form  name="Signup" [formGroup]="SignIn">
+      <div class="email-input">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name" name="name" />
+          <mat-error
+            *ngIf="SignIn.controls.name.invalid && SignIn.controls.name.touched"
+            >Please enter your Name
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <!-- <span class="alink"> Forgot PASSWORD</span>  -->
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Last Name</mat-label>
+          <input matInput formControlName="LastName" />
+          <mat-error
+            *ngIf="SignIn.controls.LastName.invalid &&SignIn.controls.
+            LastName.touched"> Last name is Also required
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <!-- <span class="alink"> Forgot PASSWORD</span>  -->
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" />
+          <mat-error
+            *ngIf="SignIn.controls.email.touched && !SignIn.controls.email.value"> Email is is required</mat-error>
+            <mat-error *ngIf="SignIn.controls.email.value">email is not valid
+
+            
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <!-- <span class="alink"> Forgot PASSWORD</span>  -->
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>password</mat-label>
+          <input
+            matInput
+            formControlName="password"
+            name="password"
+            type="password"
+          />
+          <mat-error *ngIf="SignIn.controls.password.touched && !SignIn.controls.password.value">password is a required field!</mat-error>
+          <mat-error *ngIf="SignIn.controls.password.value">password must 6 charater one upper case and second is lower case and one special charater  
+            
+          </mat-error>
+           
+        </mat-form-field>
+      </div>
+
+      <button mat-flat-button (click)="Login()" color="primary">Sign in</button>
+    </form>
+  </mat-card-content>
+</mat-card>
