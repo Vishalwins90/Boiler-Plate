@@ -28,4 +28,9 @@ export class HomeComponent {
   //   if(data)
   //   this.dataSource = JSON.parse(data)
   // }
+  delete(value:any){
+    debugger
+this.data.splice(value?.id,1)
+localStorage.setItem('userdetail',JSON.stringify(this.data))
+  }
 }

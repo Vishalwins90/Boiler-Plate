@@ -51,3 +51,8 @@
 .navbar a{
   color: white;
 }
+.nav-item li:hover {
+  color: #111;
+  transform: scale(1.2);
+  text-shadow: none;
+}

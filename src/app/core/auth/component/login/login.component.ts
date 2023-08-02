@@ -40,9 +40,9 @@ const localdata=localStorage.getItem('SingnIn')
   //   console.log(data)
   // }
   onlogin(){
-    // debugger;
+    debugger;
     this.loginForm.push(this.form);
-    let add=localStorage.setItem('user',JSON.stringify(this.loginForm))
+   
     console.log(this.form)
     let data=localStorage.getItem('users')
 if(data){
@@ -52,7 +52,7 @@ if(data){
 
     
     if (userExit && userExit.email==this.form.email && userExit.password==this.form.password) {
-      
+      let add=localStorage.setItem('user',JSON.stringify(this.loginForm))
       this.router.navigate(['./home']);
     } else {
       alert("Login failed, display error to user");

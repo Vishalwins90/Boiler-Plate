@@ -1,0 +1,77 @@
+<mat-card  style="height: 500px;" >
+<mat-card-content class="forms" >
+  
+  <form name="Send" [formGroup]="Add" class="my-form">
+   
+  
+    <mat-toolbar class="forms1">
+      <div class="register"><h1>Add-Employee</h1></div>
+    </mat-toolbar>
+    
+     <mat-form-field class="full-width">
+            <mat-label>First Name</mat-label>
+            <input matInput formControlName="name"  name="name"  />
+            <mat-error
+            *ngIf="Add.controls.name.invalid && Add.controls.name.touched"
+            >Please enter your Name
+          </mat-error>                                                                                    
+         </mat-form-field>
+         <mat-form-field class="full-width">
+            <mat-label>Last Name</mat-label>
+            <input  matInput  name="lastname"   formControlName="lastname"  matInput  placeholder="Last Name" name="lname"  required>
+            <mat-error
+            *ngIf="Add.controls.lastname.invalid &&Add.controls.
+            lastname.touched"> Last name is Also required
+          </mat-error>
+         </mat-form-field>
+         <mat-form-field class="full-width">
+            <mat-label>PhoneNumber</mat-label>
+            <input  formControlName="phone"   matInput name="phone" matInput  placeholder="PhoneNumber" name="Number"  required>
+         </mat-form-field>
+         <mat-form-field class="full-width">
+            <mat-label>Email</mat-label>
+            <input name="email" formControlName="email" matInput  placeholder="Email" name="email">
+            <mat-error
+            *ngIf="Add.controls.email.touched && !Add.controls.email.value"> Email is is required</mat-error>
+            <mat-error *ngIf="Add.controls.email.value">email is not valid
+
+            
+          </mat-error>
+         </mat-form-field>
+         <!-- <mat-form-field class="full-width">
+            <mat-label>Password</mat-label>
+            <input  matInput  placeholder="Password"  name="password">
+         </mat-form-field> -->
+         <section class="example-section">
+          <label name="gender" class="example-margin" style="margin-top: 15px;">Gender:</label>
+          <mat-radio-group style="margin-top: 5px;" formControlName="gender">
+            <mat-radio-button   class="example-margin" value="Male">Male</mat-radio-button>
+            <mat-radio-button   class="example-margin" value="Femalee">Female</mat-radio-button>
+            <mat-radio-button  class="example-margin" value="other">Other</mat-radio-button>
+          </mat-radio-group>
+          <mat-form-field>
+            <mat-label class="datesb">Date of Birth</mat-label>
+        <input  name="date" formControlName="date" matInput [matDatepicker]="picker" placeholder="Choose a date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+         
+        </section>
+        <!-- <mat-form-field>
+          <mat-label>Date of Birth</mat-label>
+      <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field> -->
+    
+    <div class="example-button"  style="text-align: center; margin-top: 20px;">
+    
+      <button type="submit" style="margin-bottom: 0% !important;" (click)="Send()"  mat-raised-button color="primary"  >Submit</button>
+      
+    </div>
+   
+  </form>
+  
+</mat-card-content>
+
+</mat-card>

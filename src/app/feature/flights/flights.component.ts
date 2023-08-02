@@ -8,11 +8,9 @@ import { ServicesComponent } from 'src/app/shared/services/services.component';
 })
 export class FlightsComponent {
   count=1
-  constructor(private _desigenServices:ServicesComponent){
+  constructor(){
 
-  }
-  Addname(){
-this.count++;
-this._desigenServices.mySubject.next(this.count);
+
+
   }
 }
